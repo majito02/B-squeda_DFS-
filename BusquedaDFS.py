@@ -143,7 +143,7 @@ class Grafo:
 
 #Verificacion de script ejecutado como principal
 if __name__ == "__main__":
-
+    
     # Crear una instancia de la Clase Grafo con 5 nodos
     grafo = Grafo(5,dirigido=False)
     # Agregar arista al grafo con pesos distintos
