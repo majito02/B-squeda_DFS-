@@ -139,3 +139,27 @@ class Grafo:
         # Al no entonctrar la ruta, retorna None
         return None 
 
+
+if __name__ == "__main__":
+
+    # Crear una instancia de la Clase Grafo
+    grafo = Grafo(6, dirigido=False)
+
+    # Agrega aristas al grafo con pesos de 1
+    grafo.agregar_arista(5, 0)
+    grafo.agregar_arista(2, 5)
+    grafo.agregar_arista(3, 4)
+    grafo.agregar_arista(1, 2)
+    grafo.agregar_arista(4, 5)
+    grafo.agregar_arista(2, 3)
+
+    
+    # Imprimir lista de adyacencia del grafo en consola
+    grafo.imprimir_lista_adyacente()
+    
+    # Lista de nodos recorridos
+    ruta_rec= [] 
+    # Recorrido del nodo 0 al 5
+    ruta_rec = grafo.dfs_transversal(0, 5)
+    # Imprimir recorrido DFS del grafo en consola 
+    print(f"El recorrido de la ruta del nodo 0 es {ruta_rec}")
