@@ -139,9 +139,24 @@ class Grafo:
         # Al no entonctrar la ruta, retorna None
         return None 
 
-
 #Verificacion de script ejecutado como principal
 if __name__ == "__main__":
+
+    # Crear una instancia de la Clase Grafo con 5 nodos
+    grafo = Grafo(5,dirigido=False)
+    # Agregar arista al grafo con pesos distintos
+    grafo.agregar_arista(2, 4, 2)
+    grafo.agregar_arista(1, 0, 3)
+    grafo.agregar_arista(3, 4, 4)
+    grafo.agregar_arista(1, 3, 3)
+    grafo.agregar_arista(2, 3, 2)
+  
+    #Imprimir lista de adyacencia del grafo en consola
+    grafo.imprimir_lista_adyacente()
+
+    ruta_rec= []
+    ruta_rec = grafo.dfs_transversal(0, 3)
+    print(f"El recorrido de la ruta del nodo 0  es {ruta_rec}")
 
     # Crear una instancia de la Clase Grafo
     grafo = Grafo(6, dirigido=False)
@@ -153,7 +168,6 @@ if __name__ == "__main__":
     grafo.agregar_arista(1, 2)
     grafo.agregar_arista(4, 5)
     grafo.agregar_arista(2, 3)
-
     
     # Imprimir lista de adyacencia del grafo en consola
     grafo.imprimir_lista_adyacente()
@@ -162,5 +176,29 @@ if __name__ == "__main__":
     ruta_rec= [] 
     # Recorrido del nodo 0 al 5
     ruta_rec = grafo.dfs_transversal(0, 5)
+    # Imprimir recorrido DFS del grafo en consola 
+    print(f"El recorrido de la ruta del nodo 0 es {ruta_rec}")
+
+
+
+    # Crear una instancia de la Clase Grafo
+    grafo = Grafo(7, dirigido=False)
+
+    # Agrega aristas al grafo con pesos de 1
+    grafo.agregar_arista(1, 3)
+    grafo.agregar_arista(2, 4)
+    grafo.agregar_arista(4, 5)
+    grafo.agregar_arista(6, 0)
+    grafo.agregar_arista(3, 6)
+    grafo.agregar_arista(2, 5)
+    grafo.agregar_arista(6, 2)
+    
+    # Imprimir lista de adyacencia del grafo en consola
+    grafo.imprimir_lista_adyacente()
+    
+    # Lista de nodos recorridos
+    ruta_rec= [] 
+    # Recorrido del nodo 0 al 5
+    ruta_rec = grafo.dfs_transversal(0, 4)
     # Imprimir recorrido DFS del grafo en consola 
     print(f"El recorrido de la ruta del nodo 0 es {ruta_rec}")
