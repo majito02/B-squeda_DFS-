@@ -125,4 +125,17 @@ class Grafo:
         if inicial == objetivo:
             # Imprimir ruta
             return ruta
-    
+        # Para cada nodo adyacente al inicial que no haya sido visitado aún
+        for (vecino, peso) in self.m_lista_adyacencia[inicial]:
+            # Si el vecino no ha sido visitado
+            if vecino not in visitado:
+                # Recursividad para el vecino y el objetivo
+                resultado = self.dfs_transversal(vecino, objetivo, ruta, visitado) 
+                # Si el resultado no es None
+                if resultado is not None:
+                    # Retorna la otra ruta
+                    return resultado
+        
+        # Al no entonctrar la ruta, retorna None
+        return None 
+
