@@ -100,4 +100,29 @@ class Grafo:
             # Imprimir nodo con la lista de adyacencia
             print("nodo", llave, ": ", self.m_lista_adyacencia[llave])
 
-  
+    def dfs_transversal(self, inicial, objetivo, ruta=[], visitado=set()):
+        """
+        Imprime el recorrido DFS de un vértice fuente dado.
+
+        Parametros
+        ----------
+        inicial : entero
+            Nodo inicial
+        objetivo : entero
+            Nodo objetivo
+        ruta : list
+            Lista de nodos recorridos
+        visitado : set
+            Conjunto de nodos visitados
+        """
+
+        # Agregar inicial a ruta
+        ruta.append(inicial)
+        # Agregar inicial a visitado
+        visitado.add(inicial)
+
+        # Si el nodo inicial es igual al objetivo
+        if inicial == objetivo:
+            # Imprimir ruta
+            return ruta
+    
